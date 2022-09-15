@@ -1,0 +1,708 @@
+<<<<<<< HEAD
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    
+  body {
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #fafafa;
+  }
+    
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.nav-wrapper{
+    width: 70%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-img{
+    height: 100%;
+    margin-top: 5px;
+}
+
+.search-box{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 25px;
+    background: #fafafa;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.search-box::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-items{
+    height: 22px;
+    position: relative;
+}
+
+.icon{
+    height: 100%;
+    cursor: pointer;
+    margin: 0 10px;
+    display: inline-block;
+}
+  
+  .action .profile {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  .action .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    
+  main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  main .container {
+    position: relative;
+    margin-top: 60px;
+    width: 75%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* background: #ddd; */
+  }
+    
+  .col-9 {
+    width: 65%;
+    margin-top: 30px;
+  }
+
+    
+  .col-9 .card {
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    /* min-height: 400px; */
+    display: inline-block;
+    border: 1px solid rgba(7, 7, 7, 0.24);
+  }
+    
+  .col-9 .card .top {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    
+  .col-9 .card .bottom {
+    padding: 10px 20px;
+  }
+    
+  .col-9 .card .top .userDetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+    
+  .profilepic {
+    display: inline-block;
+    cursor: pointer;
+  }
+    
+  .profilepic .profile_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, red, orange);
+    padding: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+    
+  .profilepic .profile_img .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+  }
+    
+  .profilepic .profile_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    
+  .col-9 .card .top .userDetails h3 {
+    /* width: 100%; */
+    font-size: 16px;
+    color: #4d4d4f;
+    font-weight: 500;
+    line-height: 1em;
+  }
+    
+  .col-9 .card .top .userDetails h3 span {
+    font-size: 0.75em;
+  }
+    
+  .col-9 .card .top .userDetails h3 span {
+    font-size: 0.75em;
+  }
+    
+  .dot {
+    transform: scale(0.6);
+    cursor: pointer;
+  }
+    
+  .imgBx {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    margin: 10px 0 15px;
+  }
+    
+  .comment-wrapper{
+    width: 100%;
+    height: 50px;
+    border-radius: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-wrapper .icon{
+    height: 30px;
+}
+
+.comment-box{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.comment-btn,
+.action-btn{
+    width: 70px;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: rgb(0, 162, 255);
+    opacity: 0.5;
+}
+
+.reaction-wrapper{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reaction-wrapper .icon{
+    height: 25px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.reaction-wrapper .icon.save{
+    margin-left: auto;
+}
+    
+  input.text {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #262626;
+    background: none;
+  }
+    
+  input.text::placeholder {
+    color: #777;
+  }
+    
+.post-content{
+    width: 100%;
+    padding: 20px;
+}
+
+.likes{
+    font-weight: bold;
+}
+
+.description{
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.description span{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.post-time{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.comment-wrapper{
+    width: 100%;
+    height: 50px;
+    border-radius: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-wrapper .icon{
+    height: 30px;
+}
+
+.comment-box{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.comment-btn,
+.action-btn{
+    width: 70px;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: rgb(0, 162, 255);
+    opacity: 0.5;
+}
+
+.reaction-wrapper{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reaction-wrapper .icon{
+    height: 25px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.reaction-wrapper .icon.save{
+    margin-left: auto;
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    
+  body {
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #fafafa;
+  }
+    
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.nav-wrapper{
+    width: 70%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-img{
+    height: 100%;
+    margin-top: 5px;
+}
+
+.search-box{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 25px;
+    background: #fafafa;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.search-box::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-items{
+    height: 22px;
+    position: relative;
+}
+
+.icon{
+    height: 100%;
+    cursor: pointer;
+    margin: 0 10px;
+    display: inline-block;
+}
+  
+  .action .profile {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  .action .profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    
+  main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  main .container {
+    position: relative;
+    margin-top: 60px;
+    width: 75%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* background: #ddd; */
+  }
+    
+  .col-9 {
+    width: 65%;
+    margin-top: 30px;
+  }
+
+    
+  .col-9 .card {
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    /* min-height: 400px; */
+    display: inline-block;
+    border: 1px solid rgba(7, 7, 7, 0.24);
+  }
+    
+  .col-9 .card .top {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    
+  .col-9 .card .bottom {
+    padding: 10px 20px;
+  }
+    
+  .col-9 .card .top .userDetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+    
+  .profilepic {
+    display: inline-block;
+    cursor: pointer;
+  }
+    
+  .profilepic .profile_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, red, orange);
+    padding: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+    
+  .profilepic .profile_img .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+  }
+    
+  .profilepic .profile_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    
+  .col-9 .card .top .userDetails h3 {
+    /* width: 100%; */
+    font-size: 16px;
+    color: #4d4d4f;
+    font-weight: 500;
+    line-height: 1em;
+  }
+    
+  .col-9 .card .top .userDetails h3 span {
+    font-size: 0.75em;
+  }
+    
+  .col-9 .card .top .userDetails h3 span {
+    font-size: 0.75em;
+  }
+    
+  .dot {
+    transform: scale(0.6);
+    cursor: pointer;
+  }
+    
+  .imgBx {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    margin: 10px 0 15px;
+  }
+    
+  .comment-wrapper{
+    width: 100%;
+    height: 50px;
+    border-radius: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-wrapper .icon{
+    height: 30px;
+}
+
+.comment-box{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.comment-btn,
+.action-btn{
+    width: 70px;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: rgb(0, 162, 255);
+    opacity: 0.5;
+}
+
+.reaction-wrapper{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reaction-wrapper .icon{
+    height: 25px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.reaction-wrapper .icon.save{
+    margin-left: auto;
+}
+    
+  input.text {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #262626;
+    background: none;
+  }
+    
+  input.text::placeholder {
+    color: #777;
+  }
+    
+.post-content{
+    width: 100%;
+    padding: 20px;
+}
+
+.likes{
+    font-weight: bold;
+}
+
+.description{
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.description span{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.post-time{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.comment-wrapper{
+    width: 100%;
+    height: 50px;
+    border-radius: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-wrapper .icon{
+    height: 30px;
+}
+
+.comment-box{
+    width: 80%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.comment-btn,
+.action-btn{
+    width: 70px;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: rgb(0, 162, 255);
+    opacity: 0.5;
+}
+
+.reaction-wrapper{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    margin-top: -20px;
+    align-items: center;
+}
+
+.reaction-wrapper .icon{
+    height: 25px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.reaction-wrapper .icon.save{
+    margin-left: auto;
+>>>>>>> 9df5deff592dfeec9c93a034b7d85ec6a5f60ffc
+}
