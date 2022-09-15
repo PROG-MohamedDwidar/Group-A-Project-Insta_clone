@@ -1,6 +1,6 @@
 # Group-A-Project
 Instagram clone with many shared functionalities such as adding posts, following people, etc  
-This is a group project For a summer training with ITI
+This is a group project For a summer training with ITI 
 
 ## steps to run: 
 1.download full project and place it somewhere safe 
