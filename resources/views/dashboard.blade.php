@@ -78,6 +78,10 @@
        --}}
       <li style="font-size: 20px">
         {{ Str::limit($post['body'], 300, $end='.......'); }}
+        @foreach($post->tags as $tag)
+            <a href={{route('tags.show',['id'=>$tag['id']])}}>{{"#".$tag['tagName']}}</a>  
+
+        @endforeach
         {{-- @foreach ($tagarr as $index )
             
         @endforeach --}}

@@ -58,7 +58,16 @@
       
           <li>{{ count($post->likes) }} Likes</li>
       
-          <li style="font-size: 20px">{{ Str::limit($post['body'], 300, $end='.......'); }}</li>
+          <li style="font-size: 20px">
+            {{ Str::limit($post['body'], 300, $end='.......'); }}
+            @foreach($post->tags as $tag)
+                <a href={{route('tags.show',['id'=>$tag['id']])}}>{{"#".$tag['tagName']}}</a>  
+    
+            @endforeach
+            {{-- @foreach ($tagarr as $index )
+                
+            @endforeach --}}
+          </li>
           <li style="font-size: 11px">Created at: {{ $post['created_at'] }}</li>
       
           <hr>

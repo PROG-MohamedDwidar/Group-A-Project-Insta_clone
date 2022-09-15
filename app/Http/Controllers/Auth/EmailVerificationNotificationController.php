@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Bus\Queueable;
 use Illuminate\Http\Request;
-
+use App\Jobs\processEmails;
 class EmailVerificationNotificationController extends Controller implements ShouldQueue
 {
     /**
@@ -17,7 +17,7 @@ class EmailVerificationNotificationController extends Controller implements Shou
      * @return \Illuminate\Http\RedirectResponse
      */
 
-    use Queueable;
+    // use Queueable;
     
     public function store(Request $request)
     {
@@ -25,8 +25,8 @@ class EmailVerificationNotificationController extends Controller implements Shou
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        $request->user()->sendEmailVerificationNotification()->queue()  ;
-
+        $request->user()->sendEmailVerificationNotification();
+        dispatch(new processEmails());
         return back()->with('status', 'verification-link-sent');
     }
 }

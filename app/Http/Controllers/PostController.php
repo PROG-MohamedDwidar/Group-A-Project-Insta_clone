@@ -38,18 +38,6 @@ class   PostController extends Controller
         $user = User::find(Auth::id());
         $posts = $user->feed()->sortByDesc('created_at');
         
-        
-
-
-        // $user=User::first();
-        // $user2=User::find(2);
-        // $user->follows()->attach($user2);
-        // $post=Post::first();
-        // $post->comments()->attach($user,['body'=>':> it worked']);
-        // dd(($post->likes)[0]);
-        // foreach ($post->likes as $key) {
-            
-        // }
 
         return view('dashboard')->with([
             'posts' => $posts,
@@ -72,11 +60,19 @@ class   PostController extends Controller
         $validatedData = $request->validated();
         $id = Auth::id();
         $body=$validatedData['body'];
-        
+        $body_af="";
+        foreach (str_split($body) as $char){
+            if($char=="#"){
+                break;
+            }
+            else{
+                $body_af=$body_af.$char;
+            }
+        }
         $isTag=0;
         $tag="";
         $post = Post::create([
-            'body' =>$body ,
+            'body' =>$body_af ,
             'user_id' => $id,
         ]);
         foreach (str_split($body) as $char) {
@@ -216,4 +212,12 @@ class   PostController extends Controller
 
         return redirect()->route('posts.index');      
     }
+
+
+    public function showtag($id){
+        $tag=Tag::find($id);
+
+        return view('tags.view')->with(['tag'=> $tag]);
+    }
+
 }

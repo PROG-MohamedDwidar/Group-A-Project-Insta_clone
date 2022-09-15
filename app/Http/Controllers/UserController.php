@@ -47,8 +47,8 @@ class userController extends Controller
         $followed= User::find($id);
         $follower->following()->attach($followed);
 
-
-        return view('users.show')->with(['user'=> $followed]);  
+        return redirect()->route('users.show',['id'=>$id]);
+        // return view('users.show')->with(['user'=> $followed]);  
     }
     public function unfollow($id){
 
@@ -56,8 +56,8 @@ class userController extends Controller
         $followed= User::find($id);
         $follower->following()->detach($followed);
 
-
-        return view('users.show')->with(['user'=> $followed]);   
+        return redirect()->route('users.show',['id'=>$id]);
+        // return view('users.show')->with(['user'=> $followed]);   
     }
     public function search(Request $request){
 
@@ -67,5 +67,44 @@ class userController extends Controller
 
         return view('users.index')->with(['users'=> $users]);   
     }
-    
+
+
+    public function followers($id){
+        $user = User::find($id);
+        $followers = $user->followers;
+
+        return view('users.index')->with(['users'=> $followers]);
+    }
+    public function following($id){
+        $user = User::find($id);
+        $following = $user->following;
+
+        return view('users.index')->with(['users'=> $following]);
+    }
+    public function edit($id){
+        if($id==Auth::id()){
+            $user = User::find($id);
+            return view('users.edit')->with(['user'=> $user]);
+                    
+                    
+        }
+        else{
+            return redirect()->route('users.show',['id'=>$id]);
+        }
+        
+    }
+    public function update(Request $request,$id){
+
+        $user = User::find($id);
+        if(null!==$request['avatar']){
+            $path=$request['avatar']->store('avatars', 'public');
+        }
+        else{
+            $path=$user['avatar'];
+        }
+        
+        User::where('id',$id)->update(['avatar'=>$path,'username'=>$request['username'],'bio'=>$request['bio']]);
+
+        return redirect()->route('users.show',['id'=>$id]);
+    }
 }

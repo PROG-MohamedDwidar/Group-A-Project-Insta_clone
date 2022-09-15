@@ -4,17 +4,17 @@
 
 <x-app-layout>
   <x-slot name="slot">
-    <h2> search results </h2>
+    {{-- <h2> search results </h2> --}}
 
-    <table class="table  table-light table-striped table-bordered">
-      <thead class="table-dark">
+    <table class="table">
+      <thead>
         <tr>
           <th scope="col">avatar</th>
           <th scope="col">uername</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider">
+      <tbody >
         
         @foreach($users as $user)
         
@@ -24,7 +24,7 @@
           <td>
             <form action="{{route('users.show',['id'=>$user['id']])}}" method="get">
               @csrf
-              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">>view profile</button>
+              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">view profile</button>
             </form>
           </td>
         </tr>
