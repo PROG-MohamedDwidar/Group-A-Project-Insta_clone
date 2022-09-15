@@ -1,5 +1,6 @@
 # Group-A-Project
-Instagram clone with many shared functionalities such as adding posts, following people, etc
+Instagram clone with many shared functionalities such as adding posts, following people, etc  
+This is a group project For a summer training with ITI
 
 ## steps to run: 
 1.download full project and place it somewhere safe 
@@ -11,5 +12,5 @@ Instagram clone with many shared functionalities such as adding posts, following
 7.Run php artisan serve  
 8.Run npm install  
 9.Run npm run dev  
-10.Run php artisan storage:link
+10.Run php artisan storage:link  
 11.Run php artisan queue:work
