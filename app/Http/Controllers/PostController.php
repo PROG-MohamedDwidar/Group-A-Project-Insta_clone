@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Collection;
 
 
 class   PostController extends Controller
@@ -35,8 +35,10 @@ class   PostController extends Controller
      */
 
     public function index(){
-
-        $posts = Post::all();
+        $user = User::find(Auth::id());
+        $posts = $user->feed()->sortByDesc('created_at');
+        
+        
 
 
         // $user=User::first();
